@@ -16,6 +16,8 @@ const RecipeDetails = ({ recipedetails, similarsalad }) => {
         <meta content={recipedetails.title} property="og:title"></meta>
         <meta content={recipedetails.meta} property="og:description"></meta>
         <meta content={urlFor(recipedetails.image)} property="og:image"></meta>
+        <meta property="og:image:width" content="400" />
+        <meta property="og:image:height" content="300" />
         <meta property="og:type" content="website"></meta>
         <meta property="og:site_name" content="Vegetarian Salad Recipes"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
