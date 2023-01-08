@@ -54,7 +54,6 @@ const components = {
 };
 
 const SaladRecipeContent = ({ recipedetails }) => {
-  console.log(recipedetails.conclusion);
   return (
     <div>
       <div>

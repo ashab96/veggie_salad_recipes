@@ -6,7 +6,7 @@ const SimilarSaladList = ({ similarsaladlist }) => {
   return (
     <div>
       <h3 className="text-green-400 font-medium tracking-wide text-[26px] leading-8">
-        YOU'LL ALSO LOVE
+        YOU&apos;LL ALSO LOVE
       </h3>
       <div className="pt-4 md:pt-10 ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12 lg:gap-16">
