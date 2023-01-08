@@ -19,7 +19,11 @@ const SaladsList = ({ saladlistdata }) => {
               href={`/${salad.slug.current}`}
               className="mt-6 md:mt-0 flex flex-col flex-nowrap bg-black-10 rounded-xl shadow-sm shadow-light_green-600 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-[1.02] duration-100 hover:shadow-green-400"
             >
-              <img className="rounded-xl h-52" src={urlFor(salad.image)}></img>
+              <img
+                className="rounded-xl h-52"
+                alt={salad.imagealt}
+                src={urlFor(salad.image)}
+              ></img>
               <h3 className="p-4 text-green-300 font-brandon font-bold text-[20px] leading-[2rem] tracking-[0.02em] uppercase">
                 {salad.h1}
               </h3>

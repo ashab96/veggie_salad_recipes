@@ -27,6 +27,7 @@ const ToprRecipes = ({ recipefirst3Data }) => {
               <img
                 className="rounded-xl md:h-36 lg:h-52"
                 src={urlFor(recipe.image)}
+                alt={recipe.imagealt}
               ></img>
               <h3 className="p-4 text-green-400 font-brandon font-bold text-[20px] leading-[2rem] tracking-[0.02em] uppercase">
                 {recipe.h1}
