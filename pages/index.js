@@ -149,6 +149,10 @@ const index = ({ homepagedata, recipedata }) => {
         ></meta>
         <meta property="og:type" content="website"></meta>
         <meta property="og:site_name" content="Vegetarian Salad Recipes"></meta>
+        <meta
+          name="google-site-verification"
+          content="luK9pjiOBDRfeHY1XUOHI1QmwwMaP2hLzC460RlCaTA"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={favicon} />
       </Head>

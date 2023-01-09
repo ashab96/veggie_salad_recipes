@@ -1,5 +1,6 @@
 import React from "react";
 import { urlFor } from "../../../lib/client";
+import Image from "next/image";
 
 const HomeHero = ({ homepage }) => {
   return (
@@ -17,6 +18,14 @@ const HomeHero = ({ homepage }) => {
         alt={homepage.imagealt}
         src={urlFor(homepage.gif)}
       ></img>
+      {/* <Image
+        className="pt-4 md:pt-0 w-full h-80"
+        alt={homepage.imagealt}
+        src={urlFor(homepage.gif)}
+        fill
+        height="100%"
+        width="100%"
+      /> */}
     </div>
   );
 };
