@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { logo } from "../../constants/IconUrl";
 import Link from "next/link";
+import Image from "next/image";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -9,10 +10,17 @@ const NavBar = () => {
       <div className=" px-6 md:px-12 lg:px-14">
         <nav className="flex justify-between flex-wrap">
           <Link href="/">
-            <img
+            {/* <img
               src={logo}
               alt="Veggie-Salads-Logo"
               className="w-36 my-3 h-auto"
+            /> */}
+            <Image
+              src={logo}
+              alt="Veggie-Salads-Logo"
+              className="w-36 my-3 h-auto"
+              width={500}
+              height={500}
             />
           </Link>
           <div className="block lg:hidden">
