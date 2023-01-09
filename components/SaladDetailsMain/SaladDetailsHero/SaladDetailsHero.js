@@ -1,5 +1,6 @@
 import React from "react";
 import { urlFor } from "../../../lib/client";
+import Image from "next/image";
 
 const SaladDetailsHero = ({ recipedetails }) => {
   return (
@@ -9,12 +10,19 @@ const SaladDetailsHero = ({ recipedetails }) => {
         <h1>{recipedetails.h1}</h1>
       </div>
       <div className="pt-4 md:pt-8 md:px-2">
-        <img
+        {/* <img
           className="rounded-md md:h-96 ml-auto mr-auto"
           alt={recipedetails.imagealt}
           // src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_1280,ar_16:9/v1/img/recipes/53/91/93/UU8SBx95TMuhIsAEKkg9_shishitos3.jpg"
           src={urlFor(recipedetails.image)}
-        ></img>
+        ></img> */}
+        <Image
+          className="rounded-md md:h-96 ml-auto mr-auto w-auto"
+          alt={recipedetails.imagealt}
+          src={urlFor(recipedetails.image).url()}
+          width={500}
+          height={500}
+        />
       </div>
     </div>
   );
