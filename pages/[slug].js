@@ -5,9 +5,11 @@ import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
 import SaladDetailsMain from "../components/SaladDetailsMain/SaladDetailsMain";
 import { favicon } from "../constants/IconUrl";
+import { format } from "date-fns";
 
 const RecipeDetails = ({ recipedetails, similarsalad }) => {
-  // console.log(similarsalad);
+  console.log(format(new Date(recipedetails._createdAt), "dd MMMM yyyy"));
+  console.log(recipedetails._createdAt);
   return (
     <>
       <Head>
@@ -40,11 +42,11 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const query = `*[_type == "saladrecipe" && slug.current == '${slug}'][0] {...,similarSalads[]->}`;
   const recipedetails = await client.fetch(query);
 
-  const querysimilarsalad = `*[_type == "saladrecipe" && slug.current == '${slug}'][0] {...,similarSalads[]->}`;
-  const similarsalad = await client.fetch(querysimilarsalad);
+  // const querysimilarsalad = `*[_type == "saladrecipe" && slug.current == '${slug}'][0] {...,similarSalads[]->}`;
+  // const similarsalad = await client.fetch(querysimilarsalad);
 
   return {
-    props: { recipedetails, similarsalad },
+    props: { recipedetails },
     revalidate: 10,
   };
 };
