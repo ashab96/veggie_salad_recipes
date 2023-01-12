@@ -175,7 +175,8 @@ export const getServerSideProps = async () => {
     '*[_type == "homeherosection"]{...,"videoUrl": video.asset->url}';
   const homepagedata = await client.fetch(query);
 
-  const recipequery = '*[_type == "saladrecipe"][0...3]';
+  const recipequery =
+    '*[_type == "saladrecipe"] | order(_updatedAt desc)[0...3]';
   const recipedata = await client.fetch(recipequery);
 
   return {
