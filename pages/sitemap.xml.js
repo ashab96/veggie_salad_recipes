@@ -1,6 +1,6 @@
 import React from "react";
-import * as fs from "fs";
-import { client, urlFor } from "../lib/client";
+// import * as fs from "fs";
+import { client } from "../lib/client";
 
 const Sitemap = () => {
   return null;
@@ -9,21 +9,21 @@ const Sitemap = () => {
 export const getServerSideProps = async ({ res }) => {
   const BASE_URL = "https://veggiesaladrecipes.com/";
 
-  const staticPaths = fs
-    .readdirSync("pages")
-    .filter((staticPage) => {
-      return ![
-        "api",
-        "[slug].js",
-        "_app.js",
-        "_document.js",
-        "404.js",
-        "sitemap.xml.js",
-      ].includes(staticPage);
-    })
-    .map((staticPagePath) => {
-      return `${BASE_URL}/${staticPagePath}`;
-    });
+  //   const staticPaths = fs
+  //     .readdirSync("pages")
+  //     .filter((staticPage) => {
+  //       return ![
+  //         "api",
+  //         "[slug].js",
+  //         "_app.js",
+  //         "_document.js",
+  //         "404.js",
+  //         "sitemap.xml.js",
+  //       ].includes(staticPage);
+  //     })
+  //     .map((staticPagePath) => {
+  //       return `${BASE_URL}/${staticPagePath}`;
+  //     });
 
   // const products = await getAllProducts() // some remote API call maybe!
   const recipequery = '*[_type == "saladrecipe"] | order(_updatedAt desc)';
