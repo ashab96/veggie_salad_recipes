@@ -7,7 +7,7 @@ const Sitemap = () => {
 };
 
 export const getServerSideProps = async ({ res }) => {
-  const BASE_URL = "https://veggiesaladrecipes.com/" || "http://localhost:3000";
+  const BASE_URL = "https://veggiesaladrecipes.com/";
 
   const staticPaths = fs
     .readdirSync("pages")
