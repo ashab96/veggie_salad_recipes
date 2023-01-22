@@ -10,3 +10,5 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+// "postbuild": "next-sitemap --config next-sitemap.config.js"
