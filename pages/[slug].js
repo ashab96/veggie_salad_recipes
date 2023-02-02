@@ -8,8 +8,8 @@ import { favicon } from "../constants/IconUrl";
 import { format } from "date-fns";
 
 const RecipeDetails = ({ recipedetails, similarsalad }) => {
-  console.log(format(new Date(recipedetails._createdAt), "dd MMMM yyyy"));
-  console.log(recipedetails._createdAt);
+  // console.log(format(new Date(recipedetails._createdAt), "dd MMMM yyyy"));
+  // console.log(recipedetails._createdAt);
   return (
     <>
       <Head>
@@ -39,7 +39,7 @@ const RecipeDetails = ({ recipedetails, similarsalad }) => {
 export default RecipeDetails;
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  const query = `*[_type == "saladrecipe" && slug.current == '${slug}'][0] {...,similarSalads[]->}`;
+  const query = `*[_type == "saladrecipe" && slug.current == '${slug}'][0] {...,similarSalads[]->{_id,slug,image,imagealt,h1}}`;
   const recipedetails = await client.fetch(query);
 
   // const querysimilarsalad = `*[_type == "saladrecipe" && slug.current == '${slug}'][0] {...,similarSalads[]->}`;

@@ -28,7 +28,11 @@ const SaladsList = ({ saladlistdata }) => {
               <Image
                 className="rounded-xl h-52"
                 alt={salad.imagealt}
-                src={urlFor(salad.image).url()}
+                src={urlFor(salad.image)
+                  .height(208)
+                  .auto("format")
+                  .format("jpg")
+                  .url()}
                 width={500}
                 height={500}
               />

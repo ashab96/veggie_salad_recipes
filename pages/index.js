@@ -171,12 +171,12 @@ const index = ({ homepagedata, recipedata }) => {
 };
 
 export const getServerSideProps = async () => {
-  const query =
-    '*[_type == "homeherosection"]{...,"videoUrl": video.asset->url}';
+  const query = '*[_type == "homeherosection"]';
+  // {...,"videoUrl": video.asset->url}
   const homepagedata = await client.fetch(query);
 
   const recipequery =
-    '*[_type == "saladrecipe"] | order(_updatedAt desc)[0...3]';
+    '*[_type == "saladrecipe"] | order(_updatedAt desc){ _id,slug,image,imagealt,h1}[0...3]';
   const recipedata = await client.fetch(recipequery);
 
   return {

@@ -16,7 +16,7 @@ const HomeHero = ({ homepage }) => {
       <img
         className="pt-4 md:pt-0 w-full"
         alt={homepage.imagealt}
-        src={urlFor(homepage.gif)}
+        src={urlFor(homepage.gif).url()}
       ></img>
       {/* <Image
         className="pt-4 md:pt-0 w-full h-80"

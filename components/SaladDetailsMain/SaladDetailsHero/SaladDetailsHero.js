@@ -23,7 +23,11 @@ const SaladDetailsHero = ({ recipedetails }) => {
         <Image
           className="rounded-md md:h-96 ml-auto mr-auto w-auto"
           alt={recipedetails.imagealt}
-          src={urlFor(recipedetails.image).url()}
+          src={urlFor(recipedetails.image)
+            .height(384)
+            .auto("format")
+            .format("jpg")
+            .url()}
           width={500}
           height={500}
         />

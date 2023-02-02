@@ -4,6 +4,7 @@ import { urlFor } from "../../../lib/client";
 import Image from "next/image";
 
 const ToprRecipes = ({ recipefirst3Data }) => {
+  console.log(recipefirst3Data);
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -32,7 +33,11 @@ const ToprRecipes = ({ recipefirst3Data }) => {
               ></img> */}
               <Image
                 className="rounded-xl md:h-36 lg:h-52"
-                src={urlFor(recipe.image).url()}
+                src={urlFor(recipe.image)
+                  .height(208)
+                  .auto("format")
+                  .format("jpg")
+                  .url()}
                 alt={recipe.imagealt}
                 width={500}
                 height={500}

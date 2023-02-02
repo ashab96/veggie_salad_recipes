@@ -47,7 +47,8 @@ export const getServerSideProps = async () => {
   const query = '*[_type == "recipesherosection"]';
   const recipespagedata = await client.fetch(query);
 
-  const recipequery = '*[_type == "saladrecipe"] | order(_updatedAt desc)';
+  const recipequery =
+    '*[_type == "saladrecipe"] | order(_updatedAt desc){ _id,slug,image,imagealt,h1}';
   const saladlist = await client.fetch(recipequery);
 
   return {
